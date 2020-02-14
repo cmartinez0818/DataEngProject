@@ -7,5 +7,14 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\JSGreenwell\Google Drive\Professorships\Fall2019\COP3003\ReadACSV\src\Data\BookStore.db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="BookStore.db" uuid="5ccce01a-974f-42c9-a01a-a082d29223d4">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/Data/BookStore.db</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

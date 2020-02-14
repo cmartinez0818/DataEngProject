@@ -1,5 +1,6 @@
 package edu.fgcu.dataengineering;
 
+import static edu.fgcu.dataengineering.Main.addBook;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileInputStream;
@@ -59,7 +60,9 @@ public class CsvParser {
   }
 
   protected void printCsv() {
-    /** printCsv - Printout the Csv */
+    ArrayList<String> arrayList = new ArrayList<>();
+
+    int currentLine = 0;
 
     for (Object row : fileRows) {
       /*
@@ -67,10 +70,19 @@ public class CsvParser {
             So after getting each row, we will need to "cast" row to a String array (String[])
        */
       for (String fields : (String[]) row) {
-          System.out.print(fields + ", ");
+        System.out.print(fields + ", ");
+        arrayList.add(fields);
       }
       System.out.println("\b\b\n---------------------");
+      if (currentLine > 0){
+        addBook(arrayList.get(0), arrayList.get(1), arrayList.get(2), arrayList.get(3));
+
+      }
+      arrayList.clear();
+      currentLine++;
+
     }
+
   }
 
   private boolean checkFile(String csvfile) {
